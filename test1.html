@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height: 50px;
+            background-color: pink;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/simple.js"></script>
+    <script src="js/qi.js"></script>
+    <!--<script src="js/store.js"></script>-->
+</head>
+<body>
+<section id="box">
+    <div class="box">444444</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+<script>
+
+    var ss = function (selection) {
+        this.element = [];
+        this.$all(selection);
+    }
+    ss.prototype = {
+        $all: function (selection,context) {
+            context = context||document;
+            this.element = context.querySelectorAll(selection);
+            return this;
+        },
+        hide: function () {
+            for(var i = 0,len=this.element.length;i<len;i++){
+                this.element[i].style.display = "none";
+            }
+            return this;
+        },
+        show: function () {
+            for(var i = 0,len=this.element.length;i<len;i++){
+                this.element[i].style.display = "block";
+            }
+            return this;
+        },
+        css: function (key,value) {
+                for(var i = 0,len=this.element.length;i<len;i++){
+                    this.element[i].style[key] = value;
+            }
+        }
+    }
+    var itcast = function (selcet) {
+        return new ss(selcet);
+    }
+    itcast(".box").show().css("backgroundColor","red");
+
+    function children(){
+
+    }
+
+
+</script>
+</body>

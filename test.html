@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js2/itcast.js"></script>
+    <script src="js/template.js"></script>
+</head>
+<body>
+    <div class="box">
+            <div id="ff" class="text/html">
+                <!--<h1>{{name}}</h1>-->
+                <!--{{each films}}-->
+                    <!--<p>{{$value.lead}}</p>-->
+                    <!--<p>{{$value.title}}</p>-->
+                    <!--<p>{{$value.role}}</p>-->
+                <!--{{/each}}-->
+            </div>
+    </div>
+<script>
+    var data ={
+        name:'电影列表',
+        films:
+                [
+                    {
+                        title: '复仇者联盟2',
+                        lead: '乔斯·韦登',
+                        role: '小罗伯特·唐尼'
+                    },
+                    {
+                        title: '速度与激情7',
+                        lead: '范·迪塞尔',
+                        role: '范·迪塞尔'
+                    },
+                    {
+                        title: '左耳',
+                        lead: '苏有朋',
+                        role: '苏有朋'
+                    },
+                    {
+                        title: '万物生长',
+                        lead: '范冰冰',
+                        role: '范冰冰 韩庚'
+                    },
+                    {
+                        title: '盗墓笔记',
+                        lead: '苏有朋',
+                        role: '美人鱼'
+                    }
+                ]
+    }
+     var str = "";
+    str += "<h1>{{name}}</h1>";
+    str += "{{each films}}";
+    str += "<p>{{$value.lead}}</p>";
+    str += "<p>{{$value.title}}</p>";
+    str += "<p>{{$value.role}}</p>";
+    str += "{{/each}}";
+    cast.artTemplate(str,data,"ff");
+</script>
+</body>
+</html>
